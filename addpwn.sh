@@ -52,18 +52,17 @@ echo "[*]Change the previlige of the flag file:\"$flag_path\""
 sudo chmod 640 $flag_path
 echo "[*]Register a server on xinetd"
 echo "---------------------------------"
-echo "Creating the configure file: \"$xinetd_path/$pwn_name\""
-config_xinetd_str=""
-printf 'service %s\n{
+echo "Creating the configure file: \"$xinetd_path/ctf_$pwn_name\""
+printf 'service ctf_%s\n{
     disable     = no\n
     socket_type = stream\n
     protocol    = tcp\n
     user        = %s\n
     server      = %s\n
     wait        = no\n
-}\n' $pwn_name $temp_user $pwn_path | sudo tee -a $xinetd_path/$pwn_name 
+}\n' $pwn_name $temp_user $pwn_path | sudo tee -a $xinetd_path/ctf_$pwn_name 
 echo "[*]Register a port for the pwn server"
-printf "%-16s%s/tcp%48s\n" $pwn_name $port "#add the ctf server port"| sudo tee -a $services_path
+printf "ctf_%-12s%s/tcp%48s\n" $pwn_name $port "#add the ctf server port"| sudo tee -a $services_path
 #restart the xinetd
 echo "[*]Restart the xinetd service"
 sudo /etc/init.d/xinetd restart
