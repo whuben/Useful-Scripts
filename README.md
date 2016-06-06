@@ -4,7 +4,8 @@ share some useful python scripts
 ### pwn.sh :a shell script for implementing pwn subjects in a CTF
 
 - Usage: 
-        `"Usage: pwn [-h|-v|-l <pwn-name>|-d <pwn-name>|-u <pwn-name>|-s] [--bianry <binary>] [--port <server-port>] [--flag <string-flag>]" 
+
+        "Usage: pwn [-h|-v|-l <pwn-name>|-d <pwn-name>|-u <pwn-name>|-s] [--bianry <binary>] [--port <server-port>] [--flag <string-flag>]" 
         "Options:"
         "  -h,--help"
         "  -v,--version"
