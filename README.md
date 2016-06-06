@@ -15,7 +15,7 @@ share some useful python scripts
         "  -s,--start                    #start a pwn server, more args should be given"
         "  --binary <executable-file>  #pwn server"
         "  --flag   <string-flag>       #pwn flag"
-        "  --port   <port-number>       #less than 65535"`
+        "  --port   <port-number>       #less than 65535"
 - Eg:
     - start a ctf server
         `$sudo pwn.sh -s --binary /home/xxx/ctf_binary_name --port 33333 --flag flag{test_ctf}`
