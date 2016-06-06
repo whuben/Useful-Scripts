@@ -16,11 +16,11 @@ share some useful python scripts
         "  --flag   <string-flag>       #pwn flag"
         "  --port   <port-number>       #less than 65535"
 - Eg:
-    - #### start a ctf server
+    - start a ctf server
         `$sudo pwn.sh -s --binary /home/xxx/ctf_binary_name --port 33333 --flag flag{test_ctf}`
-    - #### unload a ctf server
+    - unload a ctf server
         `$sudo pwn.sh -u ctf_binary_name`
-    - #### reload a ctf server
+    - reload a ctf server
         `$sudo pwn.sh -l ctf_binary_name`
-    - #### delete a ctf server
+    - delete a ctf server
         `$sudo pwn.sh -d ctf_binary_name`
