@@ -200,7 +200,7 @@ case "$1" in
                 printf "\033[31mError: Please provide a valid binary.\033[m\n\n"
                 exit 1
             fi
-            if [ ! -x $2 ] ; then
+            if [ ! -e $2 ] ; then
                 printf "\033[31mError: The binary '$2' does not exist.\033[m\n\n"
                 exit 1
             fi
