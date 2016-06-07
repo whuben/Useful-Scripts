@@ -142,9 +142,7 @@ deletepwn(){
     echo "[*]Deleting the tempuser:$temp_user related to the pwn:$pwn_name"
     sudo userdel $temp_user
     echo "[*]Deleting the pwn directory $pwn_dir"
-    rm -rf $pwn_dir
-    echo "[*]Deleting the register declared in $services_path"
-    sudo sed -i '/^ctf_$pwn_name.*/d' $services_path
+    sudo rm -rf $pwn_dir
     echo "[*]Deleting the $pwn_name configure file in xinetd"
     sudo rm $xinetd_path/ctf_$pwn_name
     echo "[*]Deleting the registered services line in $services_path"
@@ -241,7 +239,7 @@ case "$1" in
 
     -d)
     isDFexist $2
-    deletepwn
+    deletepwn $pwn_name
     exit 0
     ;;
 
